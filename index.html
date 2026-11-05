@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Althéa Hair — Belleza real, cuidado esencial</title>
+<meta name="description" content="Althéa Hair: cosmética capilar botánica con asesoría tricológica personalizada. Dos líneas botánicas y cuidado consciente.">
+<meta property="og:title" content="Althéa Hair — Belleza real, cuidado esencial">
+<meta property="og:description" content="Cosmética capilar botánica con asesoría tricológica personalizada.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<link rel="icon" href="Logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sage:#849780;--terracotta:#B66A4B;--aqua:#91C9BF;--coral:#E98D79;--beige:#D8C2A6;
+  --deep:#38291F;--ivory:#F8F5EF;--warm:#FFFEFA;--secondary:#746A60;
+  --radius:14px;--shadow:0 8px 30px rgba(56,41,31,.08);
+  --font-serif:'Cormorant Garamond',Georgia,serif;--font-sans:'Inter',system-ui,sans-serif;
+  --space:clamp(1rem,3vw,2.5rem);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--font-sans);color:var(--deep);background:var(--warm);line-height:1.6}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 var(--space)}
+section{padding:clamp(3rem,8vw,6rem) 0}
+h1,h2,h3{font-family:var(--font-serif);font-weight:500;line-height:1.1}
+h1{font-size:clamp(2.4rem,5vw,4.2rem)}
+h2{font-size:clamp(2rem,4vw,3.2rem)}
+h3{font-size:clamp(1.3rem,2.5vw,1.8rem)}
+.eyebrow{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.6rem;border-radius:999px;font-size:.95rem;font-weight:500;border:2px solid transparent;cursor:pointer;transition:all .25s ease;font-family:var(--font-sans)}
+.btn-primary{background:var(--terracotta);color:#fff}
+.btn-primary:hover{background:#9e5a3f;transform:translateY(-1px)}
+.btn-outline{border-color:var(--deep);color:var(--deep)}
+.btn-outline:hover{background:var(--deep);color:#fff}
+.btn-sage{background:var(--sage);color:#fff}
+.btn-sage:hover{background:#6f836b}
+.btn:focus-visible{outline:3px solid var(--aqua);outline-offset:2px}
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s,box-shadow .3s;padding:.9rem 0}
+.nav.scrolled{background:rgba(255,254,250,.92);backdrop-filter:blur(8px);box-shadow:0 2px 12px rgba(56,41,31,.06)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{height:44px;width:auto}
+.nav-links{display:flex;gap:1.6rem;align-items:center}
+.nav-links a{font-size:.9rem;font-weight:500;position:relative}
+.nav-links a:hover{color:var(--terracotta)}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:1.5px;background:var(--terracotta);transition:width .25s}
+.nav-links a:hover::after{width:100%}
+.nav-cta{margin-left:.5rem}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:.5rem}
+.hamburger span{display:block;width:24px;height:2px;background:var(--deep);margin:5px 0;transition:.3s}
+@media(max-width:820px){
+  .nav-links{position:fixed;top:70px;left:0;right:0;background:var(--warm);flex-direction:column;padding:1.5rem;gap:1rem;transform:translateY(-120%);transition:transform .3s;box-shadow:0 8px 20px rgba(56,41,31,.1)}
+  .nav-links.open{transform:translateY(0)}
+  .hamburger{display:block}
+  .nav-cta{display:none}
+}
+/* Hero */
+.hero{padding-top:7rem;background:linear-gradient(180deg,var(--ivory) 0%,var(--warm) 100%)}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.hero-attrs{display:flex;gap:1.5rem;margin-top:2rem;flex-wrap:wrap}
+.hero-attr{font-size:.85rem;color:var(--secondary)}
+.hero-attr strong{display:block;color:var(--deep);font-weight:600}
+.hero-visual{position:relative;display:flex;justify-content:center;align-items:center;min-height:420px}
+.hero-visual img{max-height:460px;object-fit:contain;filter:drop-shadow(0 20px 40px rgba(56,41,31,.15))}
+.hero-leaf{position:absolute;opacity:.15;color:var(--sage)}
+@media(max-width:820px){.hero-grid{grid-template-columns:1fr}.hero-visual{min-height:300px}}
+/* Attr strip */
+.attr-strip{background:var(--sage);color:#fff;padding:2.5rem 0}
+.attr-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.attr-item h4{font-family:var(--font-serif);font-size:1.2rem;margin:.5rem 0 .25rem}
+.attr-item p{font-size:.85rem;opacity:.9}
+.attr-icon{width:32px;height:32px}
+@media(max-width:820px){.attr-grid{grid-template-columns:repeat(2,1fr)}}
+/* Essence */
+.essence-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.essence-blocks{display:grid;gap:1.5rem;margin-top:2rem}
+.block{border-left:2px solid var(--terracotta);padding-left:1rem}
+.block .num{font-family:var(--font-serif);font-size:2rem;color:var(--terracotta)}
+@media(max-width:820px){.essence-grid{grid-template-columns:1fr}}
+/* Diagnosis */
+.diag{background:var(--ivory)}
+.diag-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2.5rem}
+.diag-card{background:#fff;border:1px solid rgba(56,41,31,.08);border-radius:var(--radius);padding:1.5rem;transition:transform .25s}
+.diag-card:hover{transform:translateY(-4px)}
+.diag-card h4{font-family:var(--font-serif);font-size:1.3rem;margin-bottom:.5rem;color:var(--terracotta)}
+@media(max-width:820px){.diag-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.diag-grid{grid-template-columns:1fr}}
+/* Products */
+.products{background:var(--warm)}
+.filter-bar{display:flex;gap:.75rem;margin:2rem 0;flex-wrap:wrap}
+.filter-btn{padding:.6rem 1.2rem;border-radius:999px;border:1px solid var(--beige);background:#fff;cursor:pointer;font-size:.9rem;transition:.2s}
+.filter-btn.active{background:var(--deep);color:#fff;border-color:var(--deep)}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem}
+.product-card{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(56,41,31,.06);transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
+.product-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.product-card .imgwrap{background:var(--ivory);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:1rem}
+.product-card img{max-height:100%;object-fit:contain}
+.product-card .info{padding:1.2rem;flex:1;display:flex;flex-direction:column}
+.product-card .cat{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);font-weight:600}
+.product-card h4{font-family:var(--font-serif);font-size:1.25rem;margin:.4rem 0 .3rem}
+.product-card .coll{font-size:.8rem;color:var(--secondary);margin-bottom:.5rem}
+.product-card p{font-size:.85rem;color:var(--secondary);flex:1}
+.product-card button{margin-top:1rem;align-self:flex-start}
+@media(max-width:900px){.product-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.product-grid{grid-template-columns:1fr}}
+/* Collection intro */
+.coll-intro{background:var(--ivory);padding:1.5rem 2rem;border-left:3px solid var(--sage);margin:2rem 0;border-radius:var(--radius)}
+/* Routines */
+.routine-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2rem}
+.routine-step{background:#fff;border-radius:var(--radius);padding:1.5rem;border:1px solid rgba(56,41,31,.06)}
+.routine-step .n{font-family:var(--font-serif);font-size:2.2rem;color:var(--terracotta)}
+@media(max-width:820px){.routine-steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.routine-steps{grid-template-columns:1fr}}
+/* Ingredients */
+.ing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2rem}
+.ing-card{background:#fff;border-radius:var(--radius);padding:2rem 1.5rem;text-align:center;border:1px solid rgba(56,41,31,.06)}
+.ing-card h4{font-family:var(--font-serif);font-size:1.5rem;margin:.75rem 0 .5rem;color:var(--terracotta)}
+@media(max-width:820px){.ing-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.ing-grid{grid-template-columns:1fr}}
+/* Sustainability */
+.sustain{background:var(--sage);color:#fff}
+.sustain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2rem}
+.sustain-card{background:rgba(255,255,255,.12);border-radius:var(--radius);padding:1.5rem;border:1px solid rgba(255,255,255,.2)}
+.sustain-card h4{font-family:var(--font-serif);font-size:1.3rem;margin-bottom:.5rem}
+@media(max-width:820px){.sustain-grid{grid-template-columns:1fr}}
+/* MVV */
+.mvv-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem}
+.mvv-card{background:#fff;border-radius:var(--radius);padding:2rem;border:1px solid rgba(56,41,31,.06)}
+.mvv-card h3{color:var(--terracotta);margin-bottom:1rem}
+.values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2rem}
+.value-item{background:var(--ivory);border-radius:var(--radius);padding:1.2rem;text-align:center;font-weight:500;font-size:.9rem}
+@media(max-width:820px){.mvv-grid{grid-template-columns:1fr}.values-grid{grid-template-columns:repeat(2,1fr)}}
+/* Purpose */
+.purpose{background:var(--ivory);text-align:center}
+.purpose p{max-width:800px;margin:1.5rem auto 0;font-size:1.1rem}
+/* Objectives accordion */
+.obj-list{display:grid;gap:1rem;margin-top:2rem}
+.obj-item{background:#fff;border:1px solid rgba(56,41,31,.08);border-radius:var(--radius);overflow:hidden}
+.obj-head{width:100%;text-align:left;padding:1.2rem 1.5rem;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--font-sans);font-size:1rem;font-weight:600;color:var(--deep)}
+.obj-head:hover{background:var(--ivory)}
+.obj-body{max-height:0;overflow:hidden;transition:max-height .35s ease;padding:0 1.5rem}
+.obj-body.open{max-height:400px;padding:0 1.5rem 1.5rem}
+.obj-body p{color:var(--secondary);font-size:.9rem}
+/* Value prop */
+.vp{background:var(--deep);color:#fff}
+.vp-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.vp-pillars{display:grid;gap:1rem;margin-top:2rem}
+.vp-pillar{border-left:2px solid var(--aqua);padding-left:1rem}
+.vp-pillar h4{font-family:var(--font-serif);font-size:1.3rem;margin-bottom:.25rem}
+@media(max-width:820px){.vp-grid{grid-template-columns:1fr}}
+/* FAQ */
+.faq-list{max-width:800px;margin:2rem auto 0;display:grid;gap:1rem}
+.faq-item{background:#fff;border:1px solid rgba(56,41,31,.08);border-radius:var(--radius);overflow:hidden}
+.faq-q{width:100%;text-align:left;padding:1.2rem 1.5rem;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;color:var(--deep)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;padding:0 1.5rem}
+.faq-a.open{max-height:400px;padding:0 1.5rem 1.5rem}
+.faq-a p{color:var(--secondary);font-size:.9rem}
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.form-group{margin-bottom:1.2rem}
+.form-group label{display:block;font-size:.85rem;font-weight:500;margin-bottom:.4rem}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:.8rem 1rem;border:1px solid var(--beige);border-radius:10px;font-family:var(--font-sans);font-size:.95rem;background:#fff}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:2px solid var(--aqua);border-color:var(--aqua)}
+.form-group .err{color:var(--coral);font-size:.8rem;margin-top:.3rem;display:none}
+.form-group.invalid .err{display:block}
+.checkbox{display:flex;gap:.6rem;align-items:flex-start;font-size:.85rem}
+.notice{background:var(--ivory);border-left:3px solid var(--terracotta);padding:1rem 1.2rem;border-radius:var(--radius);font-size:.85rem;color:var(--secondary);margin-top:1rem}
+@media(max-width:820px){.contact-grid{grid-template-columns:1fr}}
+/* Modal */
+.modal-backdrop{position:fixed;inset:0;background:rgba(56,41,31,.55);display:none;align-items:center;justify-content:center;z-index:200;padding:1rem}
+.modal-backdrop.open{display:flex}
+.modal{background:#fff;border-radius:18px;max-width:720px;width:100%;max-height:90vh;overflow:auto;padding:2rem;position:relative}
+.modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--secondary)}
+.modal-body{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.modal-body img{width:100%;object-fit:contain;max-height:360px}
+@media(max-width:600px){.modal-body{grid-template-columns:1fr}}
+/* Quiz */
+.quiz .q{margin-bottom:1.5rem}
+.quiz .q label{display:block;font-weight:600;margin-bottom:.5rem}
+.quiz .options{display:flex;flex-wrap:wrap;gap:.5rem}
+.quiz .options button{padding:.5rem 1rem;border:1px solid var(--beige);border-radius:999px;background:#fff;cursor:pointer;font-size:.85rem}
+.quiz .options button.selected{background:var(--sage);color:#fff;border-color:var(--sage)}
+.quiz-result{background:var(--ivory);border-radius:var(--radius);padding:1.5rem;margin-top:1.5rem}
+/* Footer */
+.footer{background:var(--deep);color:#fff;padding:3rem 0 1.5rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem}
+.footer a{color:rgba(255,255,255,.8);font-size:.85rem}
+.footer a:hover{color:var(--aqua)}
+.footer h4{font-family:var(--font-serif);font-size:1.1rem;margin-bottom:1rem;color:var(--aqua)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.15);margin-top:2rem;padding-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.8rem;opacity:.8}
+@media(max-width:820px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.footer-grid{grid-template-columns:1fr}}
+/* Reveal */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+.corp-info{background:rgba(255,255,255,.06);border-radius:var(--radius);padding:1.2rem;margin-top:1.5rem;font-size:.8rem;opacity:.85}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#inicio"><img src="Logo.png" alt="Logotipo de Althéa Hair" class="logo"></a>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="navLinks">
+      <a href="#inicio">Inicio</a>
+      <a href="#esencia">Nuestra esencia</a>
+      <a href="#diagnostico">Diagnóstico capilar</a>
+      <a href="#colecciones">Colecciones</a>
+      <a href="#sostenibilidad">Sostenibilidad</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#diagnostico" class="btn btn-primary nav-cta">Descubre tu rutina</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">CIENCIA BOTÁNICA · BIENESTAR CAPILAR</p>
+      <h1>Tu cabello merece un cuidado que nace de la naturaleza</h1>
+      <p style="margin-top:1.2rem;color:var(--secondary);font-size:1.05rem">Descubre una nueva forma de cuidar tu cabello. Combinamos extractos botánicos, análisis tricológico y asesoría personalizada para crear rutinas que respondan a las necesidades reales de tu cabello y tu cuero cabelludo.</p>
+      <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap">
+        <a href="#colecciones" class="btn btn-primary">Explorar colecciones</a>
+        <a href="#esencia" class="btn btn-outline">Conocer nuestro enfoque</a>
+      </div>
+      <div class="hero-attrs">
+        <div class="hero-attr"><strong>Ingredientes botánicos</strong>de origen natural</div>
+        <div class="hero-attr"><strong>Cuidado personalizado</strong>según tu perfil capilar</div>
+        <div class="hero-attr"><strong>Belleza consciente</strong>y sostenible</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg class="hero-leaf" width="120" height="120" viewBox="0 0 100 100" style="top:10%;left:5%"><path d="M50 5 L90 50 L50 95 L10 50 Z" fill="currentColor"/></svg>
+      <img src="Shampoo de cebada y cacao (1).jpg" alt="Shampoo de cebada y cacao de Althéa Hair" loading="eager">
+    </div>
+  </div>
+</section>
+
+<section class="attr-strip">
+  <div class="container attr-grid">
+    <div class="attr-item">
+      <svg class="attr-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <h4>Ciencia y tricología</h4><p>Análisis de las características capilares para orientar tu rutina.</p>
+    </div>
+    <div class="attr-item">
+      <svg class="attr-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2C8 6 6 10 6 14a6 6 0 0 0 12 0c0-4-2-8-6-12z"/></svg>
+      <h4>Extractos botánicos</h4><p>Fórmulas inspiradas en cacao, cebada, maracuyá y almendra.</p>
+    </div>
+    <div class="attr-item">
+      <svg class="attr-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18"/></svg>
+      <h4>Consumo responsable</h4><p>Búsqueda de alternativas sostenibles y cruelty free.</p>
+    </div>
+    <div class="attr-item">
+      <svg class="attr-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <h4>Atención personalizada</h4><p>Orientación adaptada a cada persona y su cabello.</p>
+    </div>
+  </div>
+</section>
+
+<section id="esencia">
+  <div class="container essence-grid">
+    <div>
+      <p class="eyebrow">Nuestra esencia</p>
+      <h2>Más que cuidado capilar, bienestar desde la raíz</h2>
+      <p style="margin-top:1rem;color:var(--secondary)">En Althéa Hair creemos que un cabello saludable comienza por comprender sus necesidades. Nuestra propuesta une el conocimiento botánico, el análisis de las características capilares y una atención consciente para acompañarte en la elección de los productos más adecuados para tu rutina.</p>
+      <div class="essence-blocks">
+        <div class="block reveal"><span class="num">01</span><h3>Comprender</h3><p>Reconocemos las características del cabello y del cuero cabelludo para orientar una rutina de cuidado más consciente.</p></div>
+        <div class="block reveal"><span class="num">02</span><h3>Formular</h3><p>Desarrollamos nuestra propuesta alrededor de extractos botánicos de cacao, cebada, maracuyá y almendra.</p></div>
+        <div class="block reveal"><span class="num">03</span><h3>Acompañar</h3><p>Buscamos que cada persona encuentre alternativas accesibles y una experiencia de cuidado adaptada a sus necesidades.</p></div>
+      </div>
+    </div>
+    <div><img src="acondicionador de cebada y cacao.jpg" alt="Acondicionador de cebada y cacao" loading="lazy" style="border-radius:var(--radius);box-shadow:var(--shadow)"></div>
+  </div>
+</section>
+
+<section class="diag" id="diagnostico">
+  <div class="container">
+    <p class="eyebrow">Diagnóstico y asesoría tricológica</p>
+    <h2>Cada cabello tiene su propia historia. Descubramos la tuya</h2>
+    <p style="margin-top:1rem;color:var(--secondary);max-width:720px">No todos los cabellos necesitan lo mismo. Nuestro enfoque de asesoría considera diferentes características capilares para orientar una rutina más adecuada.</p>
+    <div class="diag-grid">
+      <div class="diag-card reveal"><h4>Porosidad</h4><p>Capacidad del cabello para absorber y retener humedad.</p></div>
+      <div class="diag-card reveal"><h4>Textura y patrón</h4><p>Características de la fibra capilar y forma natural del cabello.</p></div>
+      <div class="diag-card reveal"><h4>Densidad</h4><p>Cantidad de cabello presente en el cuero cabelludo.</p></div>
+      <div class="diag-card reveal"><h4>Cuero cabelludo</h4><p>Características y necesidades de cuidado de la piel donde nace el cabello.</p></div>
+    </div>
+    <div style="margin-top:2rem"><button class="btn btn-primary" id="openQuiz">Explorar mi perfil capilar</button></div>
+  </div>
+</section>
+
+<section id="colecciones">
+  <div class="container">
+    <p class="eyebrow">Colecciones</p>
+    <h2>Rituales botánicos para tu cabello</h2>
+    <p style="margin-top:1rem;color:var(--secondary);max-width:720px">Dos universos botánicos, múltiples formas de cuidar tu cabello. Encuentra los productos que mejor acompañan tu rutina.</p>
+    <div class="filter-bar" role="tablist">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="cebada">Cebada y cacao</button>
+      <button class="filter-btn" data-filter="maracuya">Maracuyá y almendra</button>
+    </div>
+    <div class="coll-intro"><strong>Cebada y cacao.</strong> Una combinación botánica que inspira una rutina enfocada en la limpieza, el acondicionamiento y el cuidado integral de la fibra capilar.</div>
+    <div class="coll-intro" style="border-color:var(--coral)"><strong>Maracuyá y almendra.</strong> Una propuesta botánica para acompañar distintas necesidades de cuidado, suavidad, definición y manejo del cabello.</div>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</section>
+
+<section id="rutinas">
+  <div class="container">
+    <p class="eyebrow">Rutinas capilares</p>
+    <h2>Un ritual consciente, paso a paso</h2>
+    <div class="routine-steps">
+      <div class="routine-step reveal"><span class="n">01</span><h3>Limpiar</h3><p>Shampoo para la limpieza capilar.</p></div>
+      <div class="routine-step reveal"><span class="n">02</span><h3>Acondicionar</h3><p>Acondicionador para el acondicionamiento y desenredo.</p></div>
+      <div class="routine-step reveal"><span class="n">03</span><h3>Tratar</h3><p>Mascarilla según las necesidades del cabello.</p></div>
+      <div class="routine-step reveal"><span class="n">04</span><h3>Definir y estilizar</h3><p>Crema de peinar, mousse o gel según el resultado deseado.</p></div>
+    </div>
+    <p style="margin-top:1.5rem;color:var(--secondary);max-width:720px">La frecuencia de uso debe adaptarse a las necesidades individuales, las indicaciones del producto y las características del cuero cabelludo. No es necesario utilizar todos los productos en cada lavado.</p>
+    <div style="margin-top:1.5rem"><button class="btn btn-outline" id="openQuiz2">Crear mi rutina</button></div>
+  </div>
+</section>
+
+<section id="ingredientes">
+  <div class="container">
+    <p class="eyebrow">Ingredientes botánicos</p>
+    <h2>La naturaleza inspira nuestras fórmulas</h2>
+    <div class="ing-grid">
+      <div class="ing-card reveal"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--terracotta)" stroke-width="1.4"><circle cx="12" cy="12" r="9"/></svg><h4>Cacao</h4><p>Ingrediente botánico protagonista de nuestra propuesta de cuidado capilar.</p></div>
+      <div class="ing-card reveal"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--terracotta)" stroke-width="1.4"><path d="M12 2C8 6 6 10 6 14a6 6 0 0 0 12 0c0-4-2-8-6-12z"/></svg><h4>Cebada</h4><p>Parte de una combinación botánica pensada para las rutinas de limpieza y acondicionamiento.</p></div>
+      <div class="ing-card reveal"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--terracotta)" stroke-width="1.4"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><h4>Maracuyá</h4><p>Ingrediente que forma parte de nuestra propuesta de cuidado consciente.</p></div>
+      <div class="ing-card reveal"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--terracotta)" stroke-width="1.4"><ellipse cx="12" cy="12" rx="9" ry="6"/></svg><h4>Almendra</h4><p>Ingrediente botánico incorporado a una de nuestras líneas de cuidado.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sustain" id="sostenibilidad">
+  <div class="container">
+    <p class="eyebrow" style="color:var(--aqua)">Sostenibilidad</p>
+    <h2 style="color:#fff">Cuidar de ti también significa cuidar del planeta</h2>
+    <p style="margin-top:1rem;max-width:720px;opacity:.9">Nuestra visión va más allá del producto. Buscamos construir un modelo de belleza consciente que promueva alternativas accesibles, el uso responsable de los recursos y relaciones más justas con quienes hacen posible nuestras materias primas.</p>
+    <div class="sustain-grid">
+      <div class="sustain-card reveal"><h4>Economía circular</h4><p>Promoveremos sistemas de reenvasado y alternativas de empaque que contribuyan a reducir residuos.</p></div>
+      <div class="sustain-card reveal"><h4>Abastecimiento responsable</h4><p>Buscamos establecer alianzas con pequeños agricultores colombianos para fortalecer cadenas de suministro más justas y trazables.</p></div>
+      <div class="sustain-card reveal"><h4>Formulación consciente</h4><p>Nuestra propuesta parte de ingredientes botánicos y de una búsqueda constante de alternativas responsables.</p></div>
+      <div class="sustain-card reveal"><h4>Inclusión y comunidad</h4><p>Queremos impulsar oportunidades laborales inclusivas, valorar los saberes de diversas comunidades y fortalecer el trabajo colaborativo.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="mvv">
+  <div class="container">
+    <p class="eyebrow">Misión, visión y valores</p>
+    <h2>Una belleza consciente con propósito</h2>
+    <p style="margin-top:1rem;color:var(--secondary);max-width:720px">Creemos en una belleza consciente que reconoce las diversas necesidades de las personas, valora el bien común y promueve decisiones responsables con el entorno.</p>
+    <div class="mvv-grid">
+      <div class="mvv-card reveal"><h3>Misión</h3><p>Trabajamos por el bienestar capilar de nuestros consumidores a través de productos a base de extractos botánicos y análisis tricológico, garantizando una asesoría completa para la correcta elección de nuestros productos y una experiencia satisfactoria. Buscamos contribuir no solo a la apariencia del cabello, sino también a su fuerza, elasticidad, brillo, estructura, hidratación, nutrición y reparación, promoviendo el cuidado de un cuero cabelludo sano.</p></div>
+      <div class="mvv-card reveal"><h3>Visión</h3><p>Como empresa, buscamos posicionarnos en los próximos cinco años a nivel nacional como uno de los principales referentes del cuidado capilar sostenible y la innovación, mediante una gestión responsable en los ámbitos ambiental y cultural. Aspiramos a generar rentabilidad, impulsar empleos inclusivos, valorar los conocimientos de las comunidades étnicas en el cuidado natural y fortalecer la satisfacción de nuestros consumidores a través de nuestras líneas de productos.</p></div>
+    </div>
+    <div class="values-grid">
+      <div class="value-item">Respeto</div><div class="value-item">Inclusión</div><div class="value-item">Conciencia ecológica</div><div class="value-item">Transparencia</div>
+      <div class="value-item">Altruismo</div><div class="value-item">Solidaridad</div><div class="value-item">Trabajo en equipo</div>
+    </div>
+  </div>
+</section>
+
+<section class="purpose">
+  <div class="container">
+    <p class="eyebrow">Nuestro propósito</p>
+    <h2>Objetivo general</h2>
+    <p>Producir líneas de cuidado capilar a base de extractos botánicos de cacao, maracuyá, almendra y cebada, formuladas para diferentes tipos de cabello, patrones, porosidades y características del cuero cabelludo. Buscamos hacerlo mediante procesos sostenibles, apoyo al pequeño agricultor colombiano, asesoría personalizada, limpieza profunda y un sistema de reenvasado eco-friendly, consolidando un modelo de negocio rentable, trazable y de alta calidad que posicione a Althéa Hair como referente de la belleza consciente en el mercado nacional.</p>
+  </div>
+</section>
+
+<section id="objetivos">
+  <div class="container">
+    <p class="eyebrow">Objetivos estratégicos</p>
+    <h2>Siete pilares para crecer con propósito</h2>
+    <div class="obj-list" id="objList"></div>
+  </div>
+</section>
+
+<section class="vp">
+  <div class="container vp-grid">
+    <div>
+      <p class="eyebrow" style="color:var(--aqua)">Propuesta de valor</p>
+      <h2 style="color:#fff">Alta tecnología, naturaleza y cuidado consciente</h2>
+      <p style="margin-top:1rem;opacity:.9">Más que una marca, somos un aliado para tu bienestar y el del planeta. Buscamos comprender tus necesidades reales mediante herramientas de análisis capilar y orientarte hacia productos accesibles, sostenibles y libres de crueldad animal. Porque creemos que cuidarse no debería ser un lujo, sino un hábito responsable.</p>
+      <div class="vp-pillars">
+        <div class="vp-pillar"><h4>Personalización</h4><p style="opacity:.85;font-size:.9rem">Orientación basada en las características y necesidades de cada cabello.</p></div>
+        <div class="vp-pillar"><h4>Accesibilidad</h4><p style="opacity:.85;font-size:.9rem">Una propuesta de cuidado consciente pensada para acercar el bienestar capilar a más personas.</p></div>
+        <div class="vp-pillar"><h4>Responsabilidad</h4><p style="opacity:.85;font-size:.9rem">Compromiso con la sostenibilidad, la inclusión y la búsqueda de alternativas cruelty free.</p></div>
+      </div>
+    </div>
+    <div><img src="mascarilla de maracuya y almendra.jpg" alt="Mascarilla de maracuyá y almendra" loading="lazy" style="border-radius:var(--radius);max-height:420px;object-fit:contain;margin:0 auto"></div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <p class="eyebrow" style="text-align:center">Preguntas frecuentes</p>
+    <h2 style="text-align:center">Resolvemos tus dudas</h2>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="container contact-grid">
+    <div>
+      <p class="eyebrow">Contacto y comunidad</p>
+      <h2>Comencemos a cuidar tu cabello de forma consciente</h2>
+      <p style="margin-top:1rem;color:var(--secondary)">¿Quieres conocer nuestras colecciones o recibir orientación sobre tu rutina capilar? Déjanos tus datos y cuéntanos qué necesitas.</p>
+      <div class="notice">La funcionalidad de envío requiere configurar un servicio backend. Mientras tanto, este formulario valida tus datos y te muestra un resumen para que puedas copiarlo o enviarlo manualmente.</div>
+    </div>
+    <form id="contactForm" novalidate>
+      <div class="form-group"><label for="nombre">Nombre</label><input id="nombre" type="text" required><div class="err">Ingresa tu nombre.</div></div>
+      <div class="form-group"><label for="email">Correo electrónico</label><input id="email" type="email" required><div class="err">Ingresa un correo válido.</div></div>
+      <div class="form-group"><label for="motivo">Motivo de consulta</label>
+        <select id="motivo" required>
+          <option value="">Selecciona una opción</option>
+          <option>Información sobre productos</option>
+          <option>Orientación capilar</option>
+          <option>Disponibilidad</option>
+          <option>Sostenibilidad</option>
+          <option>Otro</option>
+        </select><div class="err">Selecciona un motivo.</div></div>
+      <div class="form-group"><label for="mensaje">Mensaje</label><textarea id="mensaje" rows="4" required></textarea><div class="err">Escribe tu mensaje.</div></div>
+      <div class="form-group"><label class="checkbox"><input type="checkbox" id="acepto" required> Acepto la política de tratamiento de datos personales.</label><div class="err" id="aceptoErr" style="display:none">Debes aceptar la política.</div></div>
+      <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+      <div id="formResult" style="margin-top:1rem;font-size:.85rem;color:var(--secondary)"></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <img src="Logo.png" alt="Logotipo de Althéa Hair" style="height:44px;margin-bottom:1rem;filter:brightness(0) invert(1)">
+      <p style="font-family:var(--font-serif);font-size:1.1rem;margin-bottom:.5rem">Belleza real, cuidado esencial</p>
+      <p style="font-size:.85rem;opacity:.8;max-width:320px">Cosmética capilar botánica con asesoría tricológica personalizada. Una belleza consciente que cuida de ti y del planeta.</p>
+      <div class="corp-info">
+        <strong>Información corporativa</strong><br>
+        Estructura preparada para incorporar datos verificables de la organización (nombres, cargos y registros) cuando se confirmen.
+      </div>
+    </div>
+    <div>
+      <h4>Secciones</h4>
+      <a href="#inicio">Inicio</a><br><a href="#esencia">Nuestra esencia</a><br><a href="#diagnostico">Diagnóstico capilar</a><br><a href="#colecciones">Colecciones</a>
+    </div>
+    <div>
+      <h4>Colecciones</h4>
+      <a href="#colecciones">Cebada y cacao</a><br><a href="#colecciones">Maracuyá y almendra</a><br><a href="#sostenibilidad">Sostenibilidad</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="#contacto">Contacto</a><br>
+      <span style="opacity:.6;font-size:.8rem">Política de privacidad y términos: pendientes de publicación.</span>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span id="year"></span> Althéa Hair. Todos los derechos reservados.</span>
+    <span>Belleza real, cuidado esencial.</span>
+  </div>
+</footer>
+
+<!-- Product modal -->
+<div class="modal-backdrop" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Cerrar">×</button>
+    <div class="modal-body">
+      <img id="modalImg" alt="">
+      <div>
+        <p class="eyebrow" id="modalColl"></p>
+        <h3 id="modalTitle"></h3>
+        <p class="cat" id="modalCat" style="font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);font-weight:600;margin:.5rem 0"></p>
+        <p id="modalDesc" style="color:var(--secondary);margin-top:.75rem"></p>
+        <button class="btn btn-outline" style="margin-top:1.5rem" id="consultBtn">Consultar disponibilidad</button>
+        <p id="consultMsg" style="margin-top:.75rem;font-size:.8rem;color:var(--secondary);display:none">La consulta de disponibilidad requiere configurar un canal de contacto. Por ahora puedes usar el formulario de la sección Contacto.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Quiz modal -->
+<div class="modal-backdrop" id="quizModal" role="dialog" aria-modal="true" aria-labelledby="quizTitle">
+  <div class="modal">
+    <button class="modal-close" id="quizClose" aria-label="Cerrar">×</button>
+    <h2 id="quizTitle">Explora tu perfil capilar</h2>
+    <p style="color:var(--secondary);margin-bottom:1.5rem">Responde lo que conozcas. No es obligatorio completar todas las preguntas.</p>
+    <div class="quiz" id="quizForm"></div>
+    <div style="display:flex;gap:1rem;margin-top:1.5rem;flex-wrap:wrap">
+      <button class="btn btn-primary" id="quizSubmit">Ver orientación</button>
+      <button class="btn btn-outline" id="quizEdit" style="display:none">Volver a editar</button>
+      <button class="btn btn-sage" id="quizProducts" style="display:none">Explorar productos recomendados</button>
+    </div>
+    <div id="quizResult" class="quiz-result" style="display:none"></div>
+  </div>
+</div>
+
+<script>
+const products=[
+ {id:1,name:'Shampoo de cebada y cacao',coll:'Cebada y cacao',cat:'Limpieza',img:'Shampoo de cebada y cacao (1).jpg',desc:'Limpieza capilar dentro de la línea de cebada y cacao.'},
+ {id:2,name:'Acondicionador de cebada y cacao',coll:'Cebada y cacao',cat:'Acondicionamiento',img:'acondicionador de cebada y cacao.jpg',desc:'Acondicionamiento y desenredo dentro de la línea de cebada y cacao.'},
+ {id:3,name:'Mascarilla de cebada y cacao',coll:'Cebada y cacao',cat:'Tratamiento',img:'mascarilla de cebada y cacao.jpg',desc:'Tratamiento cosmético intensivo dentro de la línea de cebada y cacao.'},
+ {id:4,name:'Crema de peinar de cebada y cacao',coll:'Cebada y cacao',cat:'Estilizado',img:'crema de peinar de cebada y cacao.jpg',desc:'Cuidado sin enjuague y manejo del cabello.'},
+ {id:5,name:'Mousse de cebada y cacao',coll:'Cebada y cacao',cat:'Estilizado',img:'mousse de cebada y cacao.jpg',desc:'Apoyo al volumen o la definición, según corresponda.'},
+ {id:6,name:'Gel de cebada y cacao',coll:'Cebada y cacao',cat:'Estilizado',img:'gel de cebada y cacao.jpg',desc:'Fijación y definición del peinado.'},
+ {id:7,name:'Shampoo de maracuyá y almendra',coll:'Maracuyá y almendra',cat:'Limpieza',img:'Shampoo de maracuya y almendra.jpg',desc:'Limpieza capilar dentro de la línea de maracuyá y almendra.'},
+ {id:8,name:'Acondicionador de maracuyá y almendra',coll:'Maracuyá y almendra',cat:'Acondicionamiento',img:'acondicionador de maracuya y almendra.jpg',desc:'Acondicionamiento y desenredo dentro de la línea de maracuyá y almendra.'},
+ {id:9,name:'Mascarilla de maracuyá y almendra',coll:'Maracuyá y almendra',cat:'Tratamiento',img:'mascarilla de maracuya y almendra.jpg',desc:'Tratamiento cosmético intensivo dentro de la línea de maracuyá y almendra.'},
+ {id:10,name:'Crema de peinar de maracuyá y almendra',coll:'Maracuyá y almendra',cat:'Estilizado',img:'crema de peinar de maracuya y almendra.jpg',desc:'Cuidado sin enjuague y manejo del cabello.'},
+ {id:11,name:'Mousse de maracuyá y almendra',coll:'Maracuyá y almendra',cat:'Estilizado',img:'mousse de maracuya y almendra.jpg',desc:'Apoyo al volumen o la definición, según corresponda.'},
+ {id:12,name:'Gel de maracuyá y almendra',coll:'Maracuyá y almendra',cat:'Estilizado',img:'gel de maracuya y almendra.jpg',desc:'Fijación y definición del peinado.'}
+];
+
+const objectives=[
+ ['Sostenibilidad y economía circular','Implementar y ampliar progresivamente el sistema de reenvasado y el uso de empaques biodegradables, optimizando costos y midiendo la reducción de residuos para fortalecer la propuesta ecológica frente a la volatilidad económica.'],
+ ['Tricología y servicio personalizado','Desarrollar un programa de capacitación técnica en tricología y protocolos de orientación que consideren el cabello, su patrón, porosidad y cuero cabelludo, mejorando la atención y la fidelización.'],
+ ['Investigación, desarrollo y formulación','Establecer un laboratorio propio o alianzas de investigación para desarrollar formulaciones con extractos vegetales de cacao, maracuyá, almendra y cebada, estandarizando los procesos y evaluando la estabilidad de los productos.'],
+ ['Abastecimiento justo y alianzas con agricultores','Consolidar alianzas de comercio justo con pequeños productores colombianos, promoviendo la trazabilidad, el acompañamiento técnico y la continuidad del abastecimiento.'],
+ ['Educación y comunicación digital','Desarrollar contenidos educativos sobre cuidado capilar, identificación de necesidades y consumo responsable, fortaleciendo la relación con los clientes y el posicionamiento de la marca.'],
+ ['Calidad, trazabilidad y logística','Implementar progresivamente un sistema integral de calidad y trazabilidad, desde el abastecimiento de materias primas hasta la entrega final, y establecer alianzas logísticas que mejoren la experiencia de compra.'],
+ ['Inclusión y escalabilidad','Medir el impacto social y ambiental, planificar la ampliación de la capacidad productiva y fortalecer la infraestructura para responder a la demanda de cosmética natural de manera sostenible.']
+];
+
+const faqs=[
+ ['¿Qué hace diferente a Althéa Hair?','Combina extractos botánicos, análisis de características capilares y asesoría personalizada en una propuesta de cuidado consciente.'],
+ ['¿Qué productos conforman las colecciones?','Dos líneas: cebada y cacao (shampoo, acondicionador, mascarilla, crema de peinar, mousse y gel) y maracuyá y almendra (shampoo, acondicionador, mascarilla, crema de peinar, mousse y gel).'],
+ ['¿Cómo puedo identificar las necesidades de mi cabello?','Usa el cuestionario «Explorar mi perfil capilar» para una orientación general y educativa. No sustituye una evaluación profesional.'],
+ ['¿Qué es la asesoría tricológica?','Un enfoque que considera el cabello, su patrón, porosidad y cuero cabelludo para orientar una rutina más adecuada.'],
+ ['¿Puedo combinar productos de las dos colecciones?','La frecuencia y combinación deben adaptarse a tus necesidades individuales e indicaciones del producto.'],
+ ['¿Qué significa el compromiso sostenible de la marca?','Búsqueda de alternativas responsables, abastecimiento justo, formulación consciente e inclusión, presentadas como objetivos en desarrollo.'],
+ ['¿Cómo puedo consultar la disponibilidad de los productos?','Por ahora no hay tienda ni contacto confirmado. Usa el formulario de Contacto o el botón «Consultar disponibilidad» en cada producto.']
+];
+
+// Render products
+const grid=document.getElementById('productGrid');
+function renderProducts(filter='all'){
+  grid.innerHTML='';
+  products.filter(p=>filter==='all'||(filter==='cebada'&&p.coll==='Cebada y cacao')||(filter==='maracuya'&&p.coll==='Maracuyá y almendra')).forEach(p=>{
+    const card=document.createElement('article');
+    card.className='product-card reveal';
+    card.innerHTML=`<div class="imgwrap"><img src="${p.img}" alt="${p.name}" loading="lazy"></div>
+    <div class="info"><span class="cat">${p.cat}</span><h4>${p.name}</h4><span class="coll">${p.coll}</span><p>${p.desc}</p><button class="btn btn-outline" data-id="${p.id}">Conocer producto</button></div>`;
+    grid.appendChild(card);
+  });
+  observeReveals();
+  grid.querySelectorAll('button[data-id]').forEach(b=>b.addEventListener('click',()=>openProduct(+b.dataset.id)));
+}
+renderProducts();
+
+document.querySelectorAll('.filter-btn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    renderProducts(b.dataset.filter);
+  });
+});
+
+// Product modal
+const pModal=document.getElementById('productModal');
+function openProduct(id){
+  const p=products.find(x=>x.id===id);
+  document.getElementById('modalImg').src=p.img;
+  document.getElementById('modalImg').alt=p.name;
+  document.getElementById('modalTitle').textContent=p.name;
+  document.getElementById('modalColl').textContent=p.coll;
+  document.getElementById('modalCat').textContent=p.cat;
+  document.getElementById('modalDesc').textContent=p.desc;
+  document.getElementById('consultMsg').style.display='none';
+  pModal.classList.add('open');
+}
+document.getElementById('modalClose').addEventListener('click',()=>pModal.classList.remove('open'));
+pModal.addEventListener('click',e=>{if(e.target===pModal)pModal.classList.remove('open')});
+document.getElementById('consultBtn').addEventListener('click',()=>{document.getElementById('consultMsg').style.display='block'});
+
+// Objectives
+const objList=document.getElementById('objList');
+objectives.forEach(([t,d],i)=>{
+  const item=document.createElement('div');
+  item.className='obj-item';
+  item.innerHTML=`<button class="obj-head" aria-expanded="false">${i+1}. ${t} <span>+</span></button><div class="obj-body"><p>${d}</p></div>`;
+  const head=item.querySelector('.obj-head');const body=item.querySelector('.obj-body');
+  head.addEventListener('click',()=>{const open=body.classList.toggle('open');head.setAttribute('aria-expanded',open);head.querySelector('span').textContent=open?'−':'+'});
+  objList.appendChild(item);
+});
+
+// FAQ
+const faqList=document.getElementById('faqList');
+faqs.forEach(([q,a])=>{
+  const item=document.createElement('div');
+  item.className='faq-item';
+  item.innerHTML=`<button class="faq-q" aria-expanded="false">${q} <span>+</span></button><div class="faq-a"><p>${a}</p></div>`;
+  const qbtn=item.querySelector('.faq-q');const adiv=item.querySelector('.faq-a');
+  qbtn.addEventListener('click',()=>{const open=adiv.classList.toggle('open');qbtn.setAttribute('aria-expanded',open);qbtn.querySelector('span').textContent=open?'−':'+'});
+  faqList.appendChild(item);
+});
+
+// Quiz
+const quizQuestions=[
+ {key:'pattern',label:'Tipo o patrón de cabello',opts:['Liso','Ondulado','Rizado','Crespo','No lo sé']},
+ {key:'porosity',label:'Porosidad',opts:['Baja','Media','Alta','No lo sé']},
+ {key:'density',label:'Densidad',opts:['Baja','Media','Alta','No lo sé']},
+ {key:'scalp',label:'Estado percibido del cuero cabelludo',opts:['Seco','Graso','Equilibrado','Sensible','No lo sé']},
+ {key:'need',label:'Necesidad principal',opts:['Hidratación','Nutrición','Definición','Reparación','Limpieza','Control del frizz']}
+];
+const quizAnswers={};
+const quizForm=document.getElementById('quizForm');
+quizQuestions.forEach(q=>{
+  const div=document.createElement('div');
+  div.className='q';
+  div.innerHTML=`<label>${q.label}</label><div class="options" data-key="${q.key}"></div>`;
+  const opts=div.querySelector('.options');
+  q.opts.forEach(o=>{
+    const btn=document.createElement('button');
+    btn.type='button';btn.textContent=o;
+    btn.addEventListener('click',()=>{opts.querySelectorAll('button').forEach(x=>x.classList.remove('selected'));btn.classList.add('selected');quizAnswers[q.key]=o;});
+    opts.appendChild(btn);
+  });
+  quizForm.appendChild(div);
+});
+
+function openQuiz(){document.getElementById('quizModal').classList.add('open')}
+document.getElementById('openQuiz').addEventListener('click',openQuiz);
+document.getElementById('openQuiz2').addEventListener('click',openQuiz);
+document.getElementById('quizClose').addEventListener('click',()=>document.getElementById('quizModal').classList.remove('open'));
+document.getElementById('quizModal').addEventListener('click',e=>{if(e.target.id==='quizModal')document.getElementById('quizModal').classList.remove('open')});
+
+document.getElementById('quizSubmit').addEventListener('click',()=>{
+  const r=document.getElementById('quizResult');
+  const a=quizAnswers;
+  let txt='Orientación general y educativa (no es un diagnóstico médico ni sustituye una evaluación profesional): ';
+  const lines=[];
+  if(a.pattern && a.pattern!=='No lo sé') lines.push(`Tu patrón ${a.pattern.toLowerCase()} puede beneficiarse de una rutina adaptada a su forma natural.`);
+  if(a.porosity && a.porosity!=='No lo sé') lines.push(`Porosidad ${a.porosity.toLowerCase()}: ajusta la frecuencia de acondicionamiento y tratamiento.`);
+  if(a.scalp && a.scalp!=='No lo sé') lines.push(`Cuero cabelludo ${a.scalp.toLowerCase()}: elige la limpieza según su estado.`);
+  if(a.need && a.need!=='No lo sé') lines.push(`Necesidad principal ${a.need.toLowerCase()}: prioriza productos de la categoría correspondiente.`);
+  if(Object.keys(a).length===0) lines.push('No se proporcionaron respuestas suficientes para generar una orientación. Completa al menos una pregunta.');
+  lines.push('Puedes explorar ambas colecciones (cebada y cacao, maracuyá y almendra) y consultar disponibilidad mediante el formulario de contacto.');
+  r.textContent=txt+lines.join(' ');
+  r.style.display='block';
+  document.getElementById('quizEdit').style.display='inline-flex';
+  document.getElementById('quizProducts').style.display='inline-flex';
+});
+document.getElementById('quizEdit').addEventListener('click',()=>{document.getElementById('quizResult').style.display='none'});
+document.getElementById('quizProducts').addEventListener('click',()=>{document.getElementById('quizModal').classList.remove('open');location.hash='#colecciones'});
+
+// Contact form
+document.getElementById('contactForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const fields=['nombre','email','motivo','mensaje'];
+  let ok=true;
+  fields.forEach(id=>{
+    const el=document.getElementById(id);const g=el.closest('.form-group');
+    let valid=el.value.trim()!=='';
+    if(id==='email') valid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value);
+    if(!valid){g.classList.add('invalid');ok=false}else{g.classList.remove('invalid')}
+  });
+  const acepto=document.getElementById('acepto');
+  const aErr=document.getElementById('aceptoErr');
+  if(!acepto.checked){aErr.style.display='block';ok=false}else{aErr.style.display='none'}
+  const res=document.getElementById('formResult');
+  if(ok){
+    res.textContent='Validación correcta. El envío real requiere configurar un servicio backend. Puedes copiar tus datos y enviarlos por el canal de contacto configurado.';
+  } else {
+    res.textContent='Corrige los campos marcados.';
+  }
+});
+
+// Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40)});
+// Hamburger
+const ham=document.getElementById('hamburger');const links=document.getElementById('navLinks');
+ham.addEventListener('click',()=>{const o=links.classList.toggle('open');ham.setAttribute('aria-expanded',o)});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');ham.setAttribute('aria-expanded','false')}));
+
+// ESC close modals
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){pModal.classList.remove('open');document.getElementById('quizModal').classList.remove('open')}
+});
+
+// Reveal
+function observeReveals(){
+  const io=new IntersectionObserver(entries=>{entries.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.12});
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el=>io.observe(el));
+}
+observeReveals();
+
+// Year
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
